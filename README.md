@@ -1,6 +1,9 @@
 <center>
+
 # Task: Automate Server Backup Script
+
 </center>
+
 ## Configuration File 
 
 Firstly , we will need a configuration file in our case  will be called "config.json" in our case its important that will a json extention because we will use that module specific :
