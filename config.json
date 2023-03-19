@@ -1,0 +1,16 @@
+{
+  "backup_path": "C:/Users/cristian/Desktop/eutech/task_backups/test/backup",
+  "max_backups": 5,
+  "directories": [
+    {
+      "source": "C:/Users/cristian/Desktop/eutech/task_backups/test/example1",
+      "destination": "backup_example1"
+    },
+    {
+      "source": "C:/Users/cristian/Desktop/eutech/task_backups/test/example2",
+      "destination": "backup_example2"
+    }
+  ]
+}
+
+  
