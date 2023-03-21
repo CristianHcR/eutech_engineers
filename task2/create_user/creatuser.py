@@ -1,6 +1,6 @@
+import os
 import json
 import subprocess
-import os
 import crypt
 
 if os.geteuid() != 0:
