@@ -30,7 +30,7 @@ First of all, we will create a .json file in this case "config.json" to create u
 ![](img/01.png)
 
   
-- **Explanations**
+### **1.1 Explanation of content**
 
     And this will contain:
 
@@ -95,7 +95,7 @@ First of all, we will create a .json file in this case "config.json" to create u
     > ```
     >**IMPORTANT:** The home dir must be the same as the username, otherwise it could cause problems.
 
-- **Example of an entire configuration file**
+## **1.2 Example of an entire configuration file**
 
 ```
 {
@@ -170,6 +170,38 @@ To do the checks faster and easier, I created a counter script to delete users a
 
   And this configuration file will be call as `user_data` on the python script.
 
+### **2.4 Creating Users**
+
+Next, we will use the configurations loaded from the `config.json` file to create Unix users using the `useradd` command. We will use a `for` loop to iterate through the list of users, and for each user we will extract the `username`, `password`, `shell`, and `home_dir` values.
+
+We will then use these values to construct the `useradd` command and execute it using the `subprocess.run` function. Here is the command we will use:
+
+```
+useradd -m -p encrypted_password -s shell -d home_dir username
+```
+
+Where `encrypted_password` is the password for the user, encrypted using the `crypt` module, and `username`, `shell`, and `home_dir` are the values extracted from the `config.json` file.
+
+Here is the code to implement this:
+
+```
+# Create users
+for user in users_data['users']:
+    username = user['username']
+    password = user['password']
+    salt = "saltstring"
+    encrypted_password = crypt.crypt(password, salt)
+    shell = user['shell']
+    home_dir = user['home_dir']
+    
+    # Construct and execute the `useradd` command to create the user with specified shell and home directory
+    command = ['useradd', '-m', '-p', encrypted_password, '-s', shell, '-d', home_dir, username]
+    subprocess.run(command)
+    
+    print(f"Created user '{username}' with password '{password}', shell '{shell}', and home directory '{home_dir}'")
+```
+
+> Note that we construct the `useradd` command as a list of strings, and pass this list to the `subprocess.run` function to execute the command. The `print` statement is used to report each user that is created.
 
 
 ### **Comprobations**
