@@ -266,16 +266,35 @@ import subprocess, json, os
 
   And this configuration file will be call as `usernames` on the python script.
     
-4.  Iterates over the list of usernames and constructs a userdel command to delete each user account. The **cmd** variable holds the userdel command as a string with options **\--remove** and **\--force** to remove the user's home directory and any files it contains. The **split()** method is used to split the command string into a list of arguments that can be passed to subprocess.run().
-    
-5.  Calls subprocess.run() to execute the userdel command with the arguments passed as a list. The **check=True** argument ensures that an error is raised if the command fails.
-    
-6.  Checks whether the user was successfully deleted by running the id command with the subprocess.run() function. If the id command raises a CalledProcessError, the user was successfully deleted, and a success message is printed to the console. Otherwise, an error message is printed indicating that the user deletion failed.
-    
-7.  Overall, this script reads a list of usernames to be deleted from a JSON configuration file, deletes the users and their home directories using the userdel command, and reports whether each user was deleted successfully or not. It also checks if the script is being run with root privileges to ensure that the userdel command can be executed.
-    
+### **3.6 Delete users**
 
+Then, over the list of usernames and constructs a userdel command to delete each user account. The **cmd** variable holds the userdel command as a string with options **\--remove** and **\--force** to remove the user's home directory and any files it contains. The **split()** method is used to split the command string into a list of arguments that can be passed to subprocess.run().
 
+Calls subprocess.run() to execute the userdel command with the arguments passed as a list. The **check=True** argument ensures that an error is raised if the command fails.
+
+```python
+# Delete the user accounts
+for username in usernames:
+    cmd = f"userdel {username} \
+           --remove \
+           --force"
+
+    subprocess.run(cmd.split(), check=True)
+```
+
+### **3.7 Checks**     
+    
+Finally, Checks whether the user was successfully deleted by running the id command with the subprocess.run() function. If the id command raises a CalledProcessError, the user was successfully deleted, and a success message is printed to the console. Otherwise, an error message is printed indicating that the user deletion failed.
+
+```python
+ try:
+        subprocess.run(f"id {username}".split(), check=True)
+        print(f"Error: Failed to delete user {username}.")
+    except subprocess.CalledProcessError:
+        print(f"User {username} was deleted successfully!")
+```
+
+### **3.8 Example full Script**
 
 ```python
 import subprocess
