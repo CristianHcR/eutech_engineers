@@ -224,21 +224,47 @@ for user in users_data['users']:
 
 To simplify and speed up the process of deleting user accounts, a script has been created that reads a configuration file called **config.json**. The configuration file only contains the **names of the users** to remove, as shown in the example below:
 
-css
 
-```css
-[    "Zipi",    "Zape"]
+```json
+[    
+    "Zipi",    
+    "Zape"
+]
 ```
 
 ### **3.2 Script**
 
 This Python script uses the following steps:
 
-1.  Imports the necessary modules: subprocess, json, and os.
+### **3.3 Modules we will need**
+
+Imports the necessary modules:
+
+```python
+import subprocess, json, os
+```    
+### **3.4 Conditions to run the script**
+
+  To run this script we will need be a privileges user `root`. So for achivement we will create the following condition on the script
+
+  ```python
+  if os.geteuid() != 0:
+      print("Error: This script must be run with root privileges.")
+      exit()
+  ```
     
-2.  Checks whether the script is being run with root privileges using the os.geteuid() function, which returns the effective user ID of the current process.
-    
-3.  Reads the usernames to be deleted from a JSON configuration file called **config.json** using the json.load() function and stores them in a list called **usernames**.
+### **3.5 Load the Configuration**
+
+  The next step it will be load the configuration of the json file. So to do that we add the following lines.
+
+  > In my case my configuration file it's called config.json
+
+  ```python 
+  with open('config.json') as f:
+      usernames = json.load(f)
+  ```
+
+  And this configuration file will be call as `usernames` on the python script.
     
 4.  Iterates over the list of usernames and constructs a userdel command to delete each user account. The **cmd** variable holds the userdel command as a string with options **\--remove** and **\--force** to remove the user's home directory and any files it contains. The **split()** method is used to split the command string into a list of arguments that can be passed to subprocess.run().
     
