@@ -1,0 +1,17 @@
+{
+        "users": [ 
+          {
+            "username": "bob",
+            "password": "123456",
+            "shell": "/bin/bash",
+            "home_dir": "/home/bob"
+          },
+          {
+            "username": "sponge",
+            "password": "123456",
+            "shell": "/bin/bash",
+            "home_dir": "/home/sponge"
+          }
+        ]
+}
+      
