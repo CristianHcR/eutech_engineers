@@ -38,10 +38,10 @@ First of all, we will create a .json file in this case "config.json" to create u
   >
   >```json
   >{
-  >   users:[
+  >   "users":[
   >       {
-  >         "username":...,
-  >          "password":...
+  >         "username":"...",
+  >          "password":"..."
   >       }
   >    ]
   >}
@@ -49,37 +49,37 @@ First of all, we will create a .json file in this case "config.json" to create u
   - **"username"**: This key will define the username to be created for a user. The value of this key will be a string that specifies the username.
   > **Example:**
   > ```json  
-  >{ ...
+  >{ "..."
   >
-  >   "username": "example"
-  >    ...
+  >   "username": "example",
+  >    "..."
   >}
   > ```
   - **"password":** This key will define the password of the user. The value of this key will be a string that specifies the password. It is **important** to note that passwords should always be stored in an encrypted form to maintain security.
   > **Example:**
   > ```json  
-  >{ ...
+  >{ "..."
   >
-  >   "password": "pass123"
-  >    ...
+  >   "password": "pass123",
+  >    "..."
   >}
   > ```
   - **"shell"**: This key will define which shell the user will use. The value of this key will be a string that specifies the shell. Shells are used to interact with the operating system and execute commands.
   > **Example:**
   > ```json  
-  >{ ...
+  >{ "..."
   >
-  >   "shell": "/bin/bash"
-  >    ...
+  >   "shell": "/bin/bash",
+  >    "..."
   >}
   >```
   - **"home_dir"**: This key will create a home directory for the user. The value of this key will be a string that specifies the path where the home directory will be created, usually in the format of "/home/username". The home directory is the default working directory for the user when they log in to the system
   > **Example:**
   > ```json  
-  >{ ...
+  >{ "..."
   >
-  >   "home_dir": "/home/username"
-  >    ...
+  >   "home_dir": "/home/username",
+  >    "..."
   >}
   > ```
   >**IMPORTANT:** The home dir must be the same as the username, otherwise it could cause problems.
@@ -142,7 +142,7 @@ First of all, we will create a .json file in this case "config.json" to create u
 
   > In my case my configuration file it's called config.json
 
-  ``` 
+  ```python 
   with open('config.json') as f:
       users_data = json.load(f)
   ```
