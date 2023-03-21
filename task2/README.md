@@ -1,19 +1,36 @@
 # **Automate User Account Creation Script**
 
+## **INDEX** 
+
++ [Objective](#objective)
++ [Materials](#materials)
++ [Develoment](#development)
+  + [1. Configuration File](#1-create-the-configuration-json-file)
+    + [1.1  (OPTIONAL FILE)](#11-optional-configuration-file-b)
+  + [2.]()
+
++ [Comprobations]
++ [Create User Script](/task2/create_user/)
++ [(Optional) Delete User Script](/task2/remove_user/)
+
+
 ## **Objective**
+
 The objective for this task it's create a script on python to create multiple users on linux this script will must contain the username, password user, home directory and shell.
 
 ## **Materials**
+
 For do this task we will need:
 
 - Python installed, in this case **"python 3.10"** 
 -  S.O Linux, in this case **"ubuntu 20.04"**
 
+
 ## **Development**
 
 ## **1. Create the configuration json file**
 
-First of all, we will create a .json file in this case "config.json":
+First of all, we will create a .json file in this case "config.json" to create users:
 
 ![](img/01.png)
 
@@ -81,7 +98,7 @@ First of all, we will create a .json file in this case "config.json":
     >    ...
     >}
     > ```
-    >**IMPORTANT:** The home dir must be the same as the username otherwise it could cause problems.
+    >**IMPORTANT:** The home dir must be the same as the username, otherwise it could cause problems.
 
 - **Example of an entire configuration file**
 
@@ -103,9 +120,21 @@ First of all, we will create a .json file in this case "config.json":
         ]
 }
 ```
+### **1.1 [OPTIONAL]** **Configuration File "B"**
 
+To do the checks faster and easier, I created a counter script to delete users and the configuration file it's a **config.json** and only contains the **name of the users** to remove, you can see an example below:
+
+```
+[
+    "Zipi",
+    "Zape"
+]
+```
 
 ## **2. Create the script python**
+
+
+
 
 ### **Comprobation**
 
