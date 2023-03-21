@@ -81,9 +81,28 @@ First of all, we will create a .json file in this case "config.json":
     >    ...
     >}
     > ```
-    >**IMPORTANT:** The house name must be the same as the username otherwise it could cause problems.
+    >**IMPORTANT:** The home dir must be the same as the username otherwise it could cause problems.
 
-    
+- **Example of an entire configuration file**
+
+```
+{
+        "users": [ 
+          {
+            "username": "Zipi",
+            "password": "1q2w3e4r5t6y",
+            "shell": "/bin/bash",
+            "home_dir": "/home/bob"
+          },
+          {
+            "username": "Zape",
+            "password": "1y2t3r4e5w6q",
+            "shell": "/bin/bash",
+            "home_dir": "/home/sponge"
+          }
+        ]
+}
+```
 
 
 ## **2. Create the script python**
