@@ -36,7 +36,7 @@ First of all, we will create a .json file in this case "config.json" to create u
   - **"users"** : This key will contain all the users that will be created. It is likely that the value of this key will be a list or an array that will hold all the user objects, each with their own set of properties such as "username", "password", etc.
   > **Example**:
   >
-  >```
+  >```json
   >{
   >   users:[
   >       {
@@ -48,7 +48,7 @@ First of all, we will create a .json file in this case "config.json" to create u
   >```
   - **"username"**: This key will define the username to be created for a user. The value of this key will be a string that specifies the username.
   > **Example:**
-  > ```  
+  > ```json  
   >{ ...
   >
   >   "username": "example"
@@ -57,7 +57,7 @@ First of all, we will create a .json file in this case "config.json" to create u
   > ```
   - **"password":** This key will define the password of the user. The value of this key will be a string that specifies the password. It is **important** to note that passwords should always be stored in an encrypted form to maintain security.
   > **Example:**
-  > ```  
+  > ```json  
   >{ ...
   >
   >   "password": "pass123"
@@ -66,7 +66,7 @@ First of all, we will create a .json file in this case "config.json" to create u
   > ```
   - **"shell"**: This key will define which shell the user will use. The value of this key will be a string that specifies the shell. Shells are used to interact with the operating system and execute commands.
   > **Example:**
-  > ```  
+  > ```json  
   >{ ...
   >
   >   "shell": "/bin/bash"
@@ -75,7 +75,7 @@ First of all, we will create a .json file in this case "config.json" to create u
   >```
   - **"home_dir"**: This key will create a home directory for the user. The value of this key will be a string that specifies the path where the home directory will be created, usually in the format of "/home/username". The home directory is the default working directory for the user when they log in to the system
   > **Example:**
-  > ```  
+  > ```json  
   >{ ...
   >
   >   "home_dir": "/home/username"
@@ -85,7 +85,7 @@ First of all, we will create a .json file in this case "config.json" to create u
   >**IMPORTANT:** The home dir must be the same as the username, otherwise it could cause problems.
 ### **1.2 Example of an entire configuration file**
 
-```
+```json
 {
         "users": [ 
           {
@@ -111,7 +111,7 @@ First of all, we will create a .json file in this case "config.json" to create u
 
   To create the python script we will need the following modules:
   
-  ```
+  ```python
   import json
   import os
   import subprocess
@@ -130,7 +130,7 @@ First of all, we will create a .json file in this case "config.json" to create u
 
   To run this script we will need be a privileges user `root`. So for achivement we will create the following condition on the script
 
-  ```
+  ```python
   if os.geteuid() != 0:
       print("Error: This script must be run with root privileges.")
       exit()
@@ -163,7 +163,7 @@ Where `encrypted_password` is the password for the user, encrypted using the `cr
 
 Here is the code to implement this:
 
-```
+```python
 # Create users
 for user in users_data['users']:
     username = user['username']
@@ -184,7 +184,7 @@ for user in users_data['users']:
 
 ### **2.5 Example of an entire script**
 
-```
+```python
 import os
 import json
 import subprocess
@@ -249,7 +249,7 @@ This Python script uses the following steps:
 7.  Overall, this script reads a list of usernames to be deleted from a JSON configuration file, deletes the users and their home directories using the userdel command, and reports whether each user was deleted successfully or not. It also checks if the script is being run with root privileges to ensure that the userdel command can be executed.
     
 
-python
+
 
 ```python
 import subprocess
