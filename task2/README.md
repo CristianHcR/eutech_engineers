@@ -145,7 +145,13 @@ import crypt
 
 -  **crypt**: We import this module to encrypt the password`s users to create
 
-To run this script we will need be a super privileges user `(root)`
+To run this script we will need be a privileges user `root`. So for achivement we will create the following condition on the script.
+
+```
+if os.geteuid() != 0:
+    print("Error: This script must be run with root privileges.")
+    exit()
+```
 
 ### **Comprobation**
 
