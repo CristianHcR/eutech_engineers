@@ -1,10 +1,10 @@
 {
         "users": [ 
           {
-            "username": "anais",
+            "username": "bob",
             "password": "123456",
             "shell": "/bin/bash",
-            "home_dir": "/home/anais"
+            "home_dir": "/home/bob"
           },
           {
             "username": "sponge",
