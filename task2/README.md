@@ -128,30 +128,49 @@ To do the checks faster and easier, I created a counter script to delete users a
 
 ## **2. Create the script python**
 
-To create the python script we will need the following modules:
+### **2.1 Modules we will need**
 
-```
-import json
-import os
-import subprocess
-import crypt
-```
+  To create the python script we will need the following modules:
+  
+  ```
+  import json
+  import os
+  import subprocess
+  import crypt
+  ```
+  
+  - **json**: We import this module to read de config.json file for the configurations.
+  
+  - **os**:  We import this module to create some conditions to execute the script
+  
+  - **subprocess**: We import this module to run the command to create the users.
+  
+  -  **crypt**: We import this module to encrypt the password`s users to create
+  
+### **2.2 Conditions to run the script**
 
-- **json**: We import this module to read de config.json file for the configurations.
+  To run this script we will need be a privileges user `root`. So for achivement we will create the following condition on the script
 
-- **os**:  We import this module to create some conditions to execute the script
+  ```
+  if os.geteuid() != 0:
+      print("Error: This script must be run with root privileges.")
+      exit()
+  ```
 
-- **subprocess**: We import this module to run the command to create the users.
+### **2.3Load the Configuration**
 
--  **crypt**: We import this module to encrypt the password`s users to create
+  The next step it will be load the configuration of the json file. So to do that we add the following lines.
 
-To run this script we will need be a privileges user `root`. So for achivement we will create the following condition on the script.
+  > In my case my configuration file it's called config.json
 
-```
-if os.geteuid() != 0:
-    print("Error: This script must be run with root privileges.")
-    exit()
-```
+  ``` 
+  with open('config.json') as f:
+      users_data = json.load(f)
+  ```
 
-### **Comprobation**
+  And this configuration file will be call as `user_data` on the python script.
+
+
+
+### **Comprobations**
 
