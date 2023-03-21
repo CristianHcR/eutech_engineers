@@ -157,7 +157,7 @@ To do the checks faster and easier, I created a counter script to delete users a
       exit()
   ```
 
-### **2.3Load the Configuration**
+### **2.3 Load the Configuration**
 
   The next step it will be load the configuration of the json file. So to do that we add the following lines.
 
