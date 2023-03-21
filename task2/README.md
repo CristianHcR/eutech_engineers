@@ -14,12 +14,11 @@ For do this task we will need:
 ## **INDEX** 
 + [Develoment](#development)
   + [1. Configuration File](#1-create-the-configuration-json-file)
-    + [1.1  (OPTIONAL FILE)](#11-optional-configuration-file-b)
-  + [2.]()
-
-+ [Comprobations]
-+ [Create User Script](/task2/create_user/)
-+ [(Optional) Delete User Script](/task2/remove_user/)
+  + [2. Create Script: Create Users](#2-create-the-script-python-create-user)
+  + [3.(Optional)Create Script: Delete Users](#3-delete-user-accounts-in-python-optional)
++ [4. Comprobations](#4-comprobation-of-his-correct-funtion)
++ [Create User Script Files](/task2/create_user/)
++ [(Optional) Delete User Script Files](/task2/remove_user/)
 
 ## **Development**
 
@@ -326,7 +325,12 @@ for username in usernames:
         print(f"User {username} was deleted successfully!")
 ```
 
-### **Comprobation of his correct funtion**
+### **4. Comprobation of his correct funtion**
 
+Firstly, I will do the comprobation of the script to create users.
 
+![](img/01.gif)
 
+Finally, I will do the comprobation of the script to delete users.
+
+![](img/02.gif)
