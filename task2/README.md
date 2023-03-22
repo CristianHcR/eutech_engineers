@@ -16,7 +16,7 @@ For do this task we will need:
   + [1. Configuration File](#1-create-the-configuration-json-file)
   + [2. Create Script: Create Users](#2-create-the-script-python-create-user)
   + [3.(Optional)Create Script: Delete Users](#3-delete-user-accounts-in-python-optional)
-+ [4. Comprobations](#4-comprobation-of-his-correct-funtion)
+  + [4. Comprobations](#4-comprobation-of-his-correct-funtion)
 + [Create User Script Files](/task2/create_user/)
 + [(Optional) Delete User Script Files](/task2/remove_user/)
 
