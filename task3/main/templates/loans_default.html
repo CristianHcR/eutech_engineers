@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block body%}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-dismissible alert-info fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+  {% endfor%}
+  {% endif %}
+  {% endwith %}
+  
+<div class="card card-body">
+    <table class="table table-striped talbe-borderered bg-white table-sm">
+        <thead>
+            <tr>
+                <td colspan="2"> <h3>Books </h3></td>
+                <td><form method="GET">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control form-control-sm" placeholder="Search title..." name="q" value="{{ request.args.get('q', '') }}">
+                        <button type="submit" class="btn btn-dark btn-sm">Search</button>
+                    </div>
+                </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Title</td>
+                <td>Author</td>
+                <td>State</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            {% if request.args.get('q', '').lower() in book[1].lower() %}
+            <tr>
+                <td> {{ book.1 }} </td>
+                <td> {{ book.2 }} </td>
+        
+                <td> 
+                    {% if book[3] == 'reserved' %} 
+                    <span class="badge text-bg-danger">reserved</span>
+                    {% else %} 
+                    <span class="badge text-bg-success">Available</span>                    
+                    {% endif %} 
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>        
+</div>
+{% endblock %}
