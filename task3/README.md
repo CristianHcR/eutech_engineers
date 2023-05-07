@@ -57,9 +57,9 @@ The database will have the following structure:
 
 ![](img/02.png)
 
-You can download the `MySQl database source` [here]()
+You can download the `MySQl database source` [here](https://github.com/CristianHcR/eutech_engineers/raw/main/task3/MySQl/library_setup.sql)
 
-And you can download the `librarian_admin` setup [here]()
+And you can download the `librarian_admin` setup [here](https://raw.githubusercontent.com/CristianHcR/eutech_engineers/main/task3/MySQl/librarian_admin.sql)
 
 ## 3. Users configuration and roles
 
@@ -250,4 +250,4 @@ And finally a gif of how it works:
 
     ![](img/03.gif)
 
-In case, you want to download this app to use it [click here.]()
+In case, you want to download this app to use it [click here.](https://github.com/CristianHcR/eutech_engineers/tree/1228896cc1def3eccf78719942c33c3b783a2381/task3/main)
