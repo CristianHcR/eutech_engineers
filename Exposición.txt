@@ -1,0 +1,37 @@
+Exposición 
+- Origen
+
+ Explicar del origen del proyecto y los problemas a "lidiar"
+
+- Objetivo
+
+  Como voy a lidiar con los diferentes problemas que hay en tres ámbitos diferentes:
+
+	- Primer ámbito seria en el proceso de instalación y creación de diferentes puntos 
+
+		¿Por qué me decante por esos servicios?
+
+		¿Qué hice para "automatizarlo"?
+
+		Demostración en laboratorio de cada instalación junto al menú
+
+	- Segundo ámbito seria en el proceso de preservación de almacenamiento
+
+		¿Que herramienta utilicé y por qué ?
+		Que elegi preservar 
+		Y como lo preservaré
+
+	- Tercer ambito seria en el proceso de monitorización 
+
+		¿Que herramienta utilicé y por qué?
+		Que elegi monitorizar 
+		Y ejemplo de como se monitorizan 
+
+- Beneficios
+
+	¿El por qué de todo esto? 
+
+- Cronología
+
+	Cuanto tiempo costaría implementarlo en la empresa
+
